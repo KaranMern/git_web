@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-const GHUBACCESSTOKEN = "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";
+const GHUBACCESSTOKEN = "<YOUR ACCESS TOKEN HERE>";
 
 const fetchLangs = async (langs_url, setLangs) => {
   try {
     const response = await fetch(langs_url, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${GHUBACCESSTOKEN}`,
+        'Authorization': `Bearer ${GHUBACCESSTOKEN}`,
         'X-GitHub-Api-Version': '2022-11-28'
       }
     });
@@ -42,7 +42,7 @@ const fetchRepos = async (repos_url, setRepos) => {
     const response = await fetch(repos_url, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${GHUBACCESSTOKEN}`,
+        'Authorization': `Bearer ${GHUBACCESSTOKEN}`,
         'X-GitHub-Api-Version': '2022-11-28'
       }
     });
@@ -87,7 +87,7 @@ const fetchUser = async (username, setUser) => {
     const response = await fetch(`https://api.github.com/users/${username}`, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${GHUBACCESSTOKEN}`,
+        'Authorization': `Bearer ${GHUBACCESSTOKEN}`,
         'X-GitHub-Api-Version': '2022-11-28'
       }
     });
